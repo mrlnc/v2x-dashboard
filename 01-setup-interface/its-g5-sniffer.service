@@ -1,0 +1,6 @@
+[Unit]
+Description=Start ITS-G5 (802.11p OCB) Sniffer
+[Service]
+ExecStart=/bin/bash /home/merlin/its-g5-sniffer.sh
+[Install]
+WantedBy=multi-user.target

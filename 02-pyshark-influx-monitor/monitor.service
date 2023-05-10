@@ -1,0 +1,10 @@
+[Unit]
+Description=Push ITS-G5 to Influx
+After=its-g5-sniffer.service
+Requires=its-g5-sniffer.service
+
+[Service]
+ExecStart=/home/merlin/v2x-map/.venv/bin/python3 /home/merlin/v2x-map/01-pyshark/monitor.py -l home -i wlp2s0-monitor
+
+[Install]
+WantedBy=multi-user.target
