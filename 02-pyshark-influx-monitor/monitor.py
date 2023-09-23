@@ -85,6 +85,10 @@ def packet_to_influx(influxdb_client: InfluxDBClient, packet) -> bool:
     except:
         return False
 
+    if its_layer.speedValue == 16383:
+        # reserved value "unavailable"
+        return False
+
     speed = get_speed(its_layer)
     lat, lon = get_lat_lon(its_layer)
     station_id = int(its_layer.stationid)
